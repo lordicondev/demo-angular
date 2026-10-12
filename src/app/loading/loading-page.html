@@ -1,0 +1,55 @@
+<h1>Loading icons when they are needed</h1>
+<p class="lead">
+  An icon loads as soon as Angular renders it. Its attributes, and Angular's
+  <code>&#64;defer</code>, can put that off until it is needed, with something in its place
+  meanwhile.
+</p>
+
+<h2>A placeholder, until the icon is ready</h2>
+<p class="note">
+  Children of <code>&lt;lord-icon&gt;</code> show until the icon is ready: here a still of each
+  icon, a plain <code>&lt;img&gt;</code>. Slow the network down in DevTools and reload to see them.
+</p>
+<div class="grid">
+  <app-example-tile code="<img> inside">
+    <lord-icon src="/icons/lock.json" trigger="hover">
+      <img src="/icons/lock.svg" alt="" width="64" height="64" />
+    </lord-icon>
+  </app-example-tile>
+  <app-example-tile code="<img> inside">
+    <lord-icon src="/icons/coins.json" trigger="hover">
+      <img src="/icons/coins.svg" alt="" width="64" height="64" />
+    </lord-icon>
+  </app-example-tile>
+</div>
+
+<h2>Loading on view, or on interaction</h2>
+<p class="note">
+  <code>loading="lazy"</code> waits until the icon is in view; <code>loading="interaction"</code>
+  until the pointer or the keyboard reaches it, with the placeholder on show until then. Hover the
+  second one.
+</p>
+<div class="grid">
+  <app-example-tile code='loading="lazy"'>
+    <lord-icon src="/icons/puzzle.json" trigger="hover" loading="lazy">
+      <img src="/icons/puzzle.svg" alt="" width="64" height="64" loading="lazy" />
+    </lord-icon>
+  </app-example-tile>
+  <app-example-tile code='loading="interaction"'>
+    <lord-icon src="/icons/lock.json" trigger="hover" loading="interaction">
+      <img src="/icons/lock.svg" alt="" width="64" height="64" />
+    </lord-icon>
+  </app-example-tile>
+</div>
+
+<h2>In a part that comes later</h2>
+<p class="note">
+  <code>&#64;defer (on viewport)</code> loads this part's code once it scrolls into view, and
+  <code>httpResource</code> its data. Its icons need nothing more: they load as soon as Angular
+  renders them, and <code>intro</code> brings them in.
+</p>
+@defer (on viewport) {
+  <app-recommendations />
+} @placeholder {
+  <p class="note">Recommendations come here.</p>
+}

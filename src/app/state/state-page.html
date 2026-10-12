@@ -1,0 +1,54 @@
+<h1>Icons that follow Angular state</h1>
+<p class="lead">
+  Signals hold the state, and a binding puts it on the page. The icon reads its attributes, or the
+  attributes of the element around it, and keeps in step. No effects, no lifecycle hooks.
+</p>
+
+<h2>Bound from a signal</h2>
+<p class="note">
+  <code>[stroke]</code> and <code>[colors]</code> set the icon's properties, as for any element,
+  here from a form's model. Change them, then hover the icon.
+</p>
+<app-looks-form />
+
+<h2>A toggle, from your data</h2>
+<p class="note">
+  <code>trigger="follow"</code> keeps the icon in step with the button's
+  <code>[attr.aria-pressed]</code>. The products come with <code>httpResource</code>, and the
+  headphones are in the cart already: their icon starts on the second look, without playing. Click
+  to see it morph.
+</p>
+@if (products.hasValue()) {
+  <ul class="products">
+    @for (product of products.value(); track product.id) {
+      <li class="product">
+        <span>
+          {{ product.name }} <span class="price">{{ product.price }}</span>
+        </span>
+        <app-cart-button [inCart]="product.inCart" />
+      </li>
+    }
+  </ul>
+} @else {
+  <p class="note">Loading products…</p>
+}
+
+<h2>A process, in stages</h2>
+<p class="note">
+  <code>follow(data-state, busy=loop-cycle, done=morph-check)</code> gives each value of
+  <code>[attr.data-state]</code> its animation: a loop while busy, a check when done, and back.
+</p>
+<div class="actions">
+  <app-download-button />
+</div>
+
+<h2>Played from code, after a request</h2>
+<p class="note">
+  <code>viewChild</code> gives the element, with <code>play()</code>. The form waits for a service
+  to answer, and the icon plays when it has.
+</p>
+<app-subscribe-form />
+
+<p class="next">
+  <a routerLink="/loading" class="link">Next: loading icons when they are needed →</a>
+</p>

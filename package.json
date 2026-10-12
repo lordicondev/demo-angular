@@ -1,0 +1,45 @@
+{
+  "name": "demo-angular",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated Lordicon icons in an Angular app, with @lordicon/element.",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+  },
+  "packageManager": "npm@11.16.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@lordicon/element": "^3.0.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
+    "@angular/compiler-cli": "^22.2.0",
+    "@eslint/js": "^10.0.1",
+    "angular-eslint": "^22.6.0",
+    "eslint": "^10.9.1",
+    "jsdom": "^30.0.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+<h1>Animated icons in an Angular app</h1>
+<p class="lead">
+  <code>&lt;lord-icon&gt;</code> goes straight into any template, like this page's. Its attributes
+  say what the icon is and when it plays. Hover, click or scroll.
+</p>
+
+<h2>Triggers</h2>
+<div class="grid">
+  <app-example-tile code='trigger="hover"'>
+    <lord-icon src="/icons/lock.json" trigger="hover" />
+  </app-example-tile>
+  <app-example-tile code='trigger="click"'>
+    <lord-icon src="/icons/coins.json" trigger="click" state="hover-jump" />
+  </app-example-tile>
+  <app-example-tile code='trigger="loop"'>
+    <lord-icon src="/icons/coins.json" trigger="loop" state="loop-spin" />
+  </app-example-tile>
+  <app-example-tile code='trigger="morph"'>
+    <lord-icon src="/icons/lock.json" trigger="morph" state="morph-unlocked" />
+  </app-example-tile>
+  <app-example-tile code='trigger="in"'>
+    <lord-icon src="/icons/puzzle.json" trigger="in" state="in-reveal" />
+  </app-example-tile>
+</div>
+
+<h2>Looks</h2>
+<p class="note">
+  The last icon takes its colour from CSS, as on a dark theme:
+  <code>--lord-icon-primary</code>, in <code>styles.css</code>.
+</p>
+<div class="grid">
+  <app-example-tile code='colors="primary:…,secondary:…"'>
+    <lord-icon
+      src="/icons/puzzle.json"
+      trigger="hover"
+      colors="primary:#e83a30,secondary:#f9a400"
+    />
+  </app-example-tile>
+  <app-example-tile code='stroke="bold"'>
+    <lord-icon src="/icons/lock.json" trigger="hover" stroke="bold" />
+  </app-example-tile>
+  <app-example-tile code="--lord-icon-primary" dark>
+    <lord-icon src="/icons/coins.json" trigger="hover" />
+  </app-example-tile>
+</div>
+
+<h2>In buttons and links</h2>
+<p class="note">
+  <code>target</code> plays the icon when the pointer is anywhere on the button, and
+  <code>current-color</code> gives it the colour of the text.
+</p>
+<div class="actions">
+  <button type="button" class="button">
+    <lord-icon src="/icons/download.json" trigger="hover" target="button" current-color />
+    Download
+  </button>
+  <a routerLink="/state" class="link">
+    <lord-icon src="/icons/morph-account.json" trigger="hover" target="a" current-color />
+    Next: icons that follow Angular state
+  </a>
+</div>

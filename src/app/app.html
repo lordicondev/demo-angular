@@ -1,0 +1,17 @@
+<header class="header">
+  <a routerLink="/" class="brand">Lordicon × Angular</a>
+  <nav class="nav">
+    <a
+      routerLink="/"
+      routerLinkActive
+      ariaCurrentWhenActive="page"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Basics</a
+    >
+    <a routerLink="/state" routerLinkActive ariaCurrentWhenActive="page">Angular state</a>
+    <a routerLink="/loading" routerLinkActive ariaCurrentWhenActive="page">Loading</a>
+  </nav>
+</header>
+<main class="main">
+  <router-outlet />
+</main>

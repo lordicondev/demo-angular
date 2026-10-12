@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "Secure your account", "icon": "/icons/lock.json" },
+  { "id": 2, "title": "Earn rewards", "icon": "/icons/coins.json" },
+  { "id": 3, "title": "Add an extension", "icon": "/icons/puzzle.json" }
+]
